@@ -1,7 +1,7 @@
-public class Deck {
+public final class Deck {
     private Card[] deck;
     public Deck(){
-        //54 cards in the deck
+        //52 cards in the deck
         deck = new Card[52];
         int i = 0;
         for (int value = 1; value <= 13; value++) {
@@ -14,7 +14,7 @@ public class Deck {
 
 
 public void shuffle() {
-    for (int i = 0; i < deck.length; i++) { // Start from the 3rd card (index 3) to skip the jokers (element 1 is null, 2 is joker, 3 is joker)
+    for (int i = 0; i < deck.length; i++) { 
 
 
         //swapping the cards
@@ -32,7 +32,7 @@ public Card drawCard() {
     Card[] tempDeck = new Card[deck.length - 1];
     // copy everything except first card from deck to tempceck
     for(int i=1;i<tempDeck.length;i++){
-        tempDeck[i]=deck[i];
+        tempDeck[i-1]=deck[i];
     }
     // make deck equal to temp deck
     deck = tempDeck;

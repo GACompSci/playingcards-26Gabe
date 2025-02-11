@@ -1,25 +1,24 @@
-public class Card {
+public final class Card {
  public static void main(String[] args) {
      
  }
-    private int value;  // ranges 0-13 & uses 0 for joker
     private final int suit;   // Suit ranges 0-4 for hearts diamonds clubs spades & 0 forjoker, I got an error message telling me to put final
     private String name;  //  name of the card 
     private static int numCards=0;
-
+private final int value;
     
     public Card() { // special for jokers
-        this.value = 0;
         this.suit = 0;   
+        this.value=0;
         this.name = "Joker";
         numCards++;
     }
 
     public Card(int value, int suit) {//the object is card & its attributes are value and suit. Used for everything that isn't a joker
-        this.value = value;
         this.suit = suit;
         this.name = generateCardName(value, this.suit);
         numCards++;
+        this.value=value;
     //System.out.println(numCards);
     }
 
@@ -32,7 +31,6 @@ public class Card {
     }
 
     public void setVal(int value) {
-        this.value = value;
         this.name = generateCardName(value, suit);  
     }
 
